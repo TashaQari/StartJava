@@ -71,33 +71,28 @@ public class VariablesTheme {
 
         System.out.println("\nС помощью побитной операции");
         System.out.println("Значения до смены: a, b = " + a + ", " + b);
-        a = a ^ b;
-        b = b ^ a;
-        a = a ^ b;
+        a ^= b;
+        b ^= a;
+        a ^= b;
         System.out.println("Значения после смены: a, b = " + a + ", " + b);
 
         System.out.println("\n6. Вывод символов и их кодов");
-        char c1 = '#'; //35
-        int dec1 = c1;
-        char c2 = '&'; //38
-        int dec2 = c2;
-        char c3 = '@'; //64
-        int dec3 = c3;
-        char c4 = '^'; //94
-        int dec4 = c4;
-        char c5 = '_'; //95
-        int dec5 = c5;
-        System.out.println(dec1 + " " + c1);
-        System.out.println(dec2 + " " + c2);
-        System.out.println(dec3 + " " + c3);
-        System.out.println(dec4 + " " + c4);
-        System.out.println(dec5 + " " + c5);
+        char c1 = '#';
+        char c2 = '&';
+        char c3 = '@';
+        char c4 = '^';
+        char c5 = '_';
+        System.out.println((int) c1 + " " + c1);
+        System.out.println((int) c2 + " " + c2);
+        System.out.println((int) c3 + " " + c3);
+        System.out.println((int) c4 + " " + c4);
+        System.out.println((int) c5 + " " + c5);
 
         System.out.println("\n7. Отображение количества сотен десятков и единиц числа");
-        int number = 123;
-        int ones = number % 10;
-        int tens = number / 10 % 10;
-        int hundreds = number / 100;
+        int srcNum = 123;
+        int ones = srcNum % 10;
+        int tens = srcNum / 10 % 10;
+        int hundreds = srcNum / 100;
         System.out.println("Число 123 содержит:");
         System.out.println(ones + " " + "единицы");
         System.out.println(tens + " " + "десятка");
@@ -105,32 +100,32 @@ public class VariablesTheme {
 
         System.out.println("\n8. Вывод на консоль ASCII-арт Дюка");
         char slash = '/'; // 47
-        char backslash = '\\'; // 92
-        char underscore = '_'; // 95
-        char openpar = '('; // 40
-        char closepar = ')'; // 41
-        System.out.println("     " + slash + backslash);
-        System.out.println("    " + slash +"  " + backslash);
-        System.out.println("   " + slash + underscore + openpar + " " + closepar + backslash);
-        System.out.println("  " + slash +"      " + backslash);
-        System.out.println(" " + slash + underscore + underscore + underscore + underscore + slash + backslash + underscore + underscore + backslash);
+        char backSlash = '\\'; // 92
+        char underScore = '_'; // 95
+        char openPar = '('; // 40
+        char closePar = ')'; // 41
+        System.out.println("     " + slash + backSlash);
+        System.out.println("    " + slash +"  " + backSlash);
+        System.out.println("   " + slash + underScore + openPar + " " + closePar + backSlash);
+        System.out.println("  " + slash +"      " + backSlash);
+        System.out.println(" " + slash + underScore + underScore + underScore + underScore + slash + backSlash + underScore + underScore + backSlash);
 
         System.out.println("\n9. Произведение и сумма цифр числа");
-        int numbers1 = 345;
-        int ones1 = numbers1 % 10; //единиц
-        int tens1 = numbers1 / 10 % 10; //десятков
-        int hundreds1 = numbers1 / 100; //сотен
-        int addition = ones1 + tens1 + hundreds1;
-        int multiplication = ones1 * tens1 * hundreds1;
-        System.out.println("Сумма цифр числа" + " " + addition);
-        System.out.println("Произведение цифр числа" + " " + multiplication);
+        int srcNum1 = 345;
+        int ones1 = srcNum1 % 10; //единиц
+        int tens1 = srcNum1 / 10 % 10; //десятков
+        int hundreds1 = srcNum1 / 100; //сотен
+        int sumDigits = ones1 + tens1 + hundreds1;
+        int multDigits = ones1 * tens1 * hundreds1;
+        System.out.println("Сумма цифр числа" + " " + sumDigits);
+        System.out.println("Произведение цифр числа" + " " + multDigits);
 
         System.out.println("\n10. Преобразование секунд");
-        int sec = 86399; //секунды исх
-        int min = sec / 60;
-        int min2 = sec % 60;
-        int min3 = sec / 60 % 60;
-        int h2 = min / 60;
-        System.out.println(h2 + ":" + min3 + ":" + min2);
+        int totalSec = 86399; //секунды исх
+        int hours = totalSec / 60 / 60;//23
+        int minutes = totalSec / 60 % 60;//59
+        int seconds = totalSec % 60;//59
+        
+        System.out.println(hours + ":" + minutes + ":" + seconds);
     }
 }
