@@ -3,7 +3,7 @@ public class VariablesTheme {
     public static void main(String[] args) {
         System.out.println("1. Создание переменных и вывод их на консоль.");
         byte core = 8;
-        System.out.println(core + " " + "количство ядер");
+        System.out.println(core + " " + "количество ядер");
         short memory = 8;
         System.out.println(memory + " " + "Гб память");
         int tecproc = 5;
@@ -16,41 +16,41 @@ public class VariablesTheme {
         System.out.println(graphics + " " + "Tflops производительность интегрированной графики\n");
 
         System.out.println("2. Расчет стоимости товара со скидкой.");
-        short pricepen = 100;
-        short pricebook = 200;
+        short pricePen = 100;
+        short priceBook = 200;
         byte reduction = 11;
-        int cost = pricepen + pricebook;
+        int cost = pricePen + priceBook;
         int discount = (cost / 100 * reduction);
-        int costdiscont = cost - discount;
-        System.out.println(discount);
-        System.out.println(costdiscont);
+        int discontCost = cost - discount;
+        System.out.println("Сумма скидки:" + discount);
+        System.out.println("Стоимость товаров со скидкой" + discontCost);
 
-        System.out.println("\n3. Вывод на косноль слова JAVA");
-        System.out.println("    " + "J" + "    " + "a" + "  " + "v" + "     " + "v" + "  " + "a");
-        System.out.println("    " + "J" + "   " + "a" + " " + "a" + "  " + "v" + "   " + "v" + "  " + "a" + " " + "a");
-        System.out.println("J" + "   " + "J" + "  " + "aaaaa" + "  " + "V" + " " + "V" + "  " + "aaaaa");
-        System.out.println(" " + "JJ" + "   " + "a" + "     " + "a" + "  " + "V" + "  " + "a" + "     " + "a");
+        System.out.println("\n3. Вывод на консоль слова JAVA");
+        System.out.println("    J    a  v     v  a");
+        System.out.println("    J   a a  v   v  a a");
+        System.out.println("J   J  aaaaa  V V  aaaaa");
+        System.out.println(" JJ   a     a  V  a     a");
 
         System.out.println("\n4. Отображение min и max значений числовых типов данных.");
         byte maxByte = 127; //создаем переменную с максимальным значением
-        System.out.println("Mаксимальное значение переменной byte:" + maxByte);
-        System.out.println("Инкрементируем переменную byte:" + ++ maxByte);
-        System.out.println("Декрементируем переменную byte:" + -- maxByte + "\n");
+        System.out.println("Максимальное значение переменной byte:" + maxByte);
+        System.out.println("Инкрементируем переменную byte:" + ++maxByte);
+        System.out.println("Декрементируем переменную byte:" + --maxByte + "\n");
 
         short maxShort = 32_767; //создаем переменную с максимальным значением
-        System.out.println("Mаксимальное значение переменной short:" + maxShort);
-        System.out.println("Инкрементируем переменную short:" + ++ maxShort);
-        System.out.println("Декрементируем переменную short:" + -- maxShort + "\n");
+        System.out.println("Максимальное значение переменной short:" + maxShort);
+        System.out.println("Инкрементируем переменную short:" + ++maxShort);
+        System.out.println("Декрементируем переменную short:" + --maxShort + "\n");
 
         int maxInt = 2_147_483_647; //создаем переменную с максимальным значением
-        System.out.println("Mаксимальное значение переменной int:" + maxInt);
-        System.out.println("Инкрементируем переменную int:" + ++ maxInt);
-        System.out.println("Декрементируем переменную int:" + -- maxInt + "\n");
+        System.out.println("Максимальное значение переменной int:" + maxInt);
+        System.out.println("Инкрементируем переменную int:" + ++maxInt);
+        System.out.println("Декрементируем переменную int:" + --maxInt + "\n");
 
         long maxLong = 9_223_372_036_854_775_807l; //создаем переменную с максимальным значением
-        System.out.println("Mаксимальное значение переменной long:" + maxLong);
-        System.out.println("Инкрементируем переменную long:" + ++ maxLong);
-        System.out.println("Декрементируем переменную long:" + -- maxLong);
+        System.out.println("Максимальное значение переменной long:" + maxLong);
+        System.out.println("Инкрементируем переменную long:" + ++maxLong);
+        System.out.println("Декрементируем переменную long:" + --maxLong);
 
         System.out.println("\n5. Перестановка значений переменных");
         int a = 2;
@@ -108,7 +108,8 @@ public class VariablesTheme {
         System.out.println("    " + slash +"  " + backSlash);
         System.out.println("   " + slash + underScore + openPar + " " + closePar + backSlash);
         System.out.println("  " + slash +"      " + backSlash);
-        System.out.println(" " + slash + underScore + underScore + underScore + underScore + slash + backSlash + underScore + underScore + backSlash);
+        System.out.println(" " + slash + underScore + underScore + underScore + underScore + slash +
+            backSlash + underScore + underScore + backSlash);
 
         System.out.println("\n9. Произведение и сумма цифр числа");
         int srcNum1 = 345;
