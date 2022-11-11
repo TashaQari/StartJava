@@ -37,11 +37,11 @@ public class IfElseStatementTheme {
                 "\nЧисло с минимальным значением " + num2);
         } else if (num1 < num2) {
             System.out.println("Число с max значением: " + num2 + 
-                "\n Число с минимальным значением " + num1);
+                "\nЧисло с минимальным значением: " + num1);
         }
         if (num1 == num2) {
             System.out.println("Числа равны");
-        } else if (num1 != num2) {
+        } else {
             System.out.println("Числа не равны");
         }
 
@@ -55,12 +55,13 @@ public class IfElseStatementTheme {
         if (srcNum != 0) {
             if (srcNum % 2 == 0) {
                 System.out.println("Число четное");
-        }   else if (srcNum % 2 != 0) {
+            } else {
                 System.out.println("Число не четное");
-        }   if (srcNum < 0) {
+            }
+            if (srcNum < 0) {
                 System.out.println("Число отрицательное");
-        } else {
-            System.out.println("Число положительное");
+            } else {
+                System.out.println("Число положительное");
         }
     }
         System.out.println("\n4. Поиск одинаковых цифр в числах");
@@ -75,11 +76,13 @@ public class IfElseStatementTheme {
         int hundreds2 = num4 / 100;
         if (ones1 == ones2) {
             System.out.println(ones1 + " третий разряд");
-            } if (tens1 == tens2) {
-                System.out.println(tens1 + " второй разряд");
-            } if (hundreds1 == hundreds2) {
-                System.out.println(hundreds1 + " первый разряд");
-            }
+        }
+        if (tens1 == tens2) {
+            System.out.println(tens1 + " второй разряд");
+        }
+        if (hundreds1 == hundreds2) {
+            System.out.println(hundreds1 + " первый разряд");
+        }
 
         System.out.println("\n5. Определение буквы, числа или символа по их коду");
         char code = '\u0057';
@@ -90,56 +93,50 @@ public class IfElseStatementTheme {
             System.out.println("большая буква");
         } else if (code >= '0' & code <= '9') {
             System.out.println("число");
+        } else {
+            System.out.println("не буква и не число");
         }
 
         System.out.println("\n6. Определение суммы вклада и начисленных банком %");
         int deposit = 300000;
             System.out.println("Сумма вклада " + deposit);
         if (deposit < 100000) {
-            System.out.println("Начисленный % " + deposit / 100 * 5);
+            System.out.println("Начисленный % " + deposit / 100 * 5 + 
+                "\nИтоговая сумма с % " + (deposit / 100 * 5 + deposit));
         } else if (deposit >= 100000 && deposit <= 300000) {
-            System.out.println("Начисленный % " + deposit / 100 * 7);
+            System.out.println("Начисленный % " + deposit / 100 * 7 +
+                "\nИтоговая сумма с % " + (deposit / 100 * 7 + deposit));
         } else if (deposit > 300000) {
-            System.out.println("Начисленный % " + deposit / 100 * 10);
-        }
-        if (deposit < 100000){
-            System.out.println("Начисленный % " + (deposit / 100 * 5 + deposit));
-        } else if (deposit >= 100000 && deposit <= 300000) {
-            System.out.println("Начисленный % " + (deposit / 100 * 7 + deposit));
-        } else if (deposit > 300000) {
-            System.out.println("Начисленный % " + (deposit / 100 * 10 + deposit));
+            System.out.println("Начисленный % " + deposit / 100 * 10 +
+                "\nИтоговая сумма с % " + (deposit / 100 * 10 + deposit));
         }
 
         System.out.println("\n7. Определение оценки по предметам");
         int percentHist = 54;
-        int valuation;
+        int grade = 1;
         if(percentHist > 91) {
-            valuation = 5;
+            grade = 5;
         }else if(percentHist > 73) {
-            valuation=4;
+            grade = 4;
         }else if(percentHist > 60) {
-            valuation=3;
+            grade = 3;
         }else if(percentHist <=60) {
-            valuation=2;
-        }else{
-            valuation=0;
+            grade = 2;
         }
-        System.out.println("Оценка " + valuation);
+        System.out.println("Оценка " + grade);
         int percentProg = 91;
-        int valuation1;
+        int grade1 = 1;
         if(percentProg > 91) {
-            valuation1 = 5;
-        }else if(percentProg > 73) {
-            valuation1=4;
-        }else if(percentProg > 60) {
-            valuation1=3;
-        }else if(percentProg <=60) {
-            valuation1=2;
-        }else{
-            valuation1=0;
+            grade1 = 5;
+        } else if(percentProg > 73) {
+            grade1=4;
+        } else if(percentProg > 60) {
+            grade1=3;
+        } else if(percentProg <=60) {
+            grade1=2;
         }
-        System.out.println("Оценка " + valuation1);
-        System.out.println(((valuation + valuation1) / 2) + " средняя оценка по предметам");
+        System.out.println("Оценка " + grade1);
+        System.out.println(((grade + grade1) / 2) + " средняя оценка по предметам");
         System.out.println(((percentHist + percentProg) / 2) + " средний процент по предметам");
 
         System.out.println("\n8. Расчет прибыли");
