@@ -38,32 +38,25 @@ public class IfElseStatementTheme {
         } else if (num1 < num2) {
             System.out.println("Число с max значением: " + num2 + 
                 "\nЧисло с минимальным значением: " + num1);
-        }
-        if (num1 == num2) {
-            System.out.println("Числа равны");
         } else {
             System.out.println("Числа не равны");
         }
 
         System.out.println("\n3. Работа с числом");
         int srcNum = 47;
-        if (srcNum == 0) {
-            System.out.println("Число 0");
-        } else {
-            System.out.println("Число " + srcNum);
-        }
         if (srcNum != 0) {
             if (srcNum % 2 == 0) {
                 System.out.println("Число четное");
             } else {
-                System.out.println("Число не четное");
+                System.out.println("Число нечетное");
             }
-            if (srcNum < 0) {
-                System.out.println("Число отрицательное");
-            } else {
+            if (srcNum > 0) {
                 System.out.println("Число положительное");
+            } else {
+                System.out.println("Число отрицательное");
+            }
         }
-    }
+
         System.out.println("\n4. Поиск одинаковых цифр в числах");
         int num3 = 386;
         int num4 = 286;
@@ -99,17 +92,16 @@ public class IfElseStatementTheme {
 
         System.out.println("\n6. Определение суммы вклада и начисленных банком %");
         int deposit = 300000;
-            System.out.println("Сумма вклада " + deposit);
+        int percent = 1;
         if (deposit < 100000) {
-            System.out.println("Начисленный % " + deposit / 100 * 5 + 
-                "\nИтоговая сумма с % " + (deposit / 100 * 5 + deposit));
+            percent = deposit / 100 * 5;
         } else if (deposit >= 100000 && deposit <= 300000) {
-            System.out.println("Начисленный % " + deposit / 100 * 7 +
-                "\nИтоговая сумма с % " + (deposit / 100 * 7 + deposit));
+            percent = deposit / 100 * 7;
         } else if (deposit > 300000) {
-            System.out.println("Начисленный % " + deposit / 100 * 10 +
-                "\nИтоговая сумма с % " + (deposit / 100 * 10 + deposit));
+            percent = deposit / 100 * 10;
         }
+        System.out.println("Сумма вклада " + deposit);
+        System.out.println("Начисленный % " + (deposit + percent));
 
         System.out.println("\n7. Определение оценки по предметам");
         int percentHist = 54;
@@ -150,28 +142,27 @@ public class IfElseStatementTheme {
             System.out.println(profityear);
         }
 
-        System.out.println("\n9. Подсчет количества банкнот");
-        int amountusd = 567;
-        int ones3 = amountusd % 10;
-        int tens3 = amountusd / 10 % 10;
-        int hundreds3 = amountusd / 100;
-        int value100 = 10;
-        int value10 = 5;
-        int value1 = 50;
-        if (hundreds3 <= value100) {
-            System.out.println("100 usd " + hundreds3);
-        } else if(hundreds3 > value100) {
-            System.out.println("100 usd " + value100 + "\n10 usd " + (hundreds3 - value100) * 10);
+        System.out.println("\n9. Подсчет количества банкнот\n");
+        int sum = 567;
+        int hundredsInStock = 10;
+        int tensInStock = 5;
+        int onesInStock = 50;
+        int needHundreds = sum / 100;
+        int needTens = sum / 10 % 10;
+        int needOnes = sum % 10;
+        if(needHundreds > hundredsInStock) {
+            needTens = (needHundreds - hundredsInStock) * 10 + needTens;
+            needHundreds = hundredsInStock;
         }
-        if (tens3 <= value10) {
-                System.out.println("10 usd " + tens3);
-        } else if (tens3 > value10) {
-            System.out.println("10 usd " + value10 + "\n1 usd " + (tens3 - value10) * 10);
+        if(needTens > tensInStock) {
+            needOnes = (needTens - tensInStock) * 10 + needOnes;
+            needTens = tensInStock;
         }
-        if (ones3 <= value1) {
-            System.out.println("1 usd " + ones3);
-        } else if (ones3 > value1) {
-            System.out.println("NOT");
+        if(needOnes > onesInStock) {
+            System.out.println("Сумму " + sum + " выдать невозможно");
+        } else {
+            System.out.println("К выдаче:\n" + needHundreds + " сотен\n" + needTens + " десяток\n" 
+                + needOnes + " единичек\nИтого: " + (needHundreds * 100 + needTens * 10 + needOnes));
         }
     }
 }
